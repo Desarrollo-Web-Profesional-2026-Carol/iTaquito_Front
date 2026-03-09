@@ -5,20 +5,7 @@ import {
   Zap, ArrowRight, Heart, ThumbsUp, MessageCircle
 } from "lucide-react";
 
-/* ─── TOKENS ─────────────────────────────────────────────────── */
-const C = {
-  pink: "#E83E8C", pinkDim: "#C0306E",
-  orange: "#F9690E", orangeDim: "#C9520A",
-  yellow: "#F4D03F",
-  teal: "#1ABC9C", tealDim: "#148F77",
-  purple: "#9B59B6", purpleDim: "#7D3C98",
-  bg: "#0F0D0B", bgCard: "#1A1612", bgCardHov: "#221E18",
-  bgAccent: "#251F18", border: "#2E2820", borderBright: "#3D3428",
-  cream: "#F5EDD8", textPrimary: "#F0E6D0",
-  textSecondary: "#9A8870", textMuted: "#5C5040",
-};
-const FONT = "'Quicksand', sans-serif";
-
+import { C, FONT, PICADO } from '../styles/designTokens';
 /* ─── DATA ───────────────────────────────────────────────────── */
 const CATEGORIES = [
   { label: "Tacos",      Icon: Utensils, color: C.pink   },
@@ -39,7 +26,6 @@ const REVIEWS = [
   { name: "Ana P.",    stars: 4, text: "Me encantó pedir la canción desde la mesa. Experiencia única.", time: "Hoy",         color: C.teal   },
 ];
 
-const PICADO = [C.pink, C.orange, C.yellow, C.teal, C.purple, C.pinkDim, C.orangeDim, C.tealDim];
 
 /* ─── PAPEL PICADO ───────────────────────────────────────────── */
 function PapelPicado({ flip = false }) {
@@ -64,7 +50,7 @@ function SectionHeading({ title, sub, color = C.pink }) {
   return (
     <div style={{ marginBottom: "28px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "6px" }}>
-        <div style={{ width: "4px", height: "26px", borderRadius: "4px", background: color, boxShadow: `0 0 8px ${color}` }} />
+        <div style={{ width: "4px", height: "26px", borderRadius: "4px", background: color }} />
         <h2 style={{ margin: 0, fontFamily: FONT, fontWeight: "800", fontSize: "clamp(18px,4vw,24px)", color: C.textPrimary }}>{title}</h2>
       </div>
       {sub && <p style={{ margin: "0 0 0 14px", fontFamily: FONT, fontSize: "13px", color: C.textSecondary }}>{sub}</p>}
@@ -94,7 +80,7 @@ function TacoCard({ taco, onTap }) {
       }}
     >
       {/* Franja sarape */}
-      <div style={{ height: "6px", background: taco.color, boxShadow: `0 0 12px ${taco.color}66` }} />
+      <div style={{ height: "6px", background: taco.color }} />
 
       <div style={{ padding: "18px" }}>
         {/* Badge */}
@@ -203,7 +189,7 @@ export default function Home() {
           </p>
 
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-            <button onClick={irAPedidos} style={{ background: C.pink, color: "#fff", border: "none", borderRadius: "12px", padding: "14px 30px", fontFamily: FONT, fontWeight: "800", fontSize: "15px", cursor: "pointer", display: "flex", alignItems: "center", gap: "8px", boxShadow: `0 0 24px ${C.pink}55` }}>
+            <button onClick={irAPedidos} style={{ background: C.pink, color: "#fff", border: "none", borderRadius: "12px", padding: "14px 30px", fontFamily: FONT, fontWeight: "800", fontSize: "15px", cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}>
               <Utensils size={16} /> Hacer mi pedido
             </button>
             <button style={{ background: "rgba(255,255,255,0.05)", color: C.textPrimary, border: `1px solid ${C.borderBright}`, borderRadius: "12px", padding: "14px 24px", fontFamily: FONT, fontWeight: "700", fontSize: "15px", cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}>
@@ -219,7 +205,7 @@ export default function Home() {
       <main style={{ maxWidth: "960px", margin: "0 auto", padding: "48px 24px" }}>
 
         {/* PROMO */}
-        <div style={{ background: `${C.pink}18`, border: `1px solid ${C.pink}44`, borderRadius: "16px", padding: "22px 26px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "14px", marginBottom: "48px", boxShadow: `0 0 30px ${C.pink}12`, position: "relative", overflow: "hidden" }}>
+        <div style={{ background: `${C.pink}18`, border: `1px solid ${C.pink}44`, borderRadius: "16px", padding: "22px 26px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "14px", marginBottom: "48px", position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", top: "-40px", right: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: `${C.pink}08`, filter: "blur(30px)" }} />
           <div style={{ position: "relative" }}>
             <div style={{ fontWeight: "800", fontSize: "17px", color: C.textPrimary, marginBottom: "4px", display: "flex", alignItems: "center", gap: "8px" }}>
@@ -229,7 +215,7 @@ export default function Home() {
               3 tacos al pastor + agua fresca — solo <strong style={{ color: C.yellow }}>$75</strong>
             </div>
           </div>
-          <button onClick={irAPedidos} style={{ background: C.yellow, color: C.bg, border: "none", borderRadius: "10px", padding: "11px 22px", fontFamily: FONT, fontWeight: "800", fontSize: "14px", cursor: "pointer", boxShadow: `0 0 16px ${C.yellow}44`, display: "flex", alignItems: "center", gap: "6px" }}>
+          <button onClick={irAPedidos} style={{ background: C.yellow, color: C.bg, border: "none", borderRadius: "10px", padding: "11px 22px", fontFamily: FONT, fontWeight: "800", fontSize: "14px", cursor: "pointer", display: "flex", alignItems: "center", gap: "6px" }}>
             Quiero esta promo <ArrowRight size={14} />
           </button>
         </div>
@@ -240,7 +226,7 @@ export default function Home() {
             const Icon = cat.Icon;
             const active = activeTab === i;
             return (
-              <button key={i} onClick={() => setActiveTab(i)} style={{ background: active ? `${cat.color}22` : "transparent", color: active ? cat.color : C.textSecondary, border: `1.5px solid ${active ? cat.color : C.border}`, borderRadius: "10px", padding: "8px 18px", fontFamily: FONT, fontWeight: "700", fontSize: "13px", cursor: "pointer", display: "flex", alignItems: "center", gap: "6px", transition: "all 0.2s", boxShadow: active ? `0 0 12px ${cat.color}33` : "none" }}>
+              <button key={i} onClick={() => setActiveTab(i)} style={{ background: active ? `${cat.color}22` : "transparent", color: active ? cat.color : C.textSecondary, border: `1.5px solid ${active ? cat.color : C.border}`, borderRadius: "10px", padding: "8px 18px", fontFamily: FONT, fontWeight: "700", fontSize: "13px", cursor: "pointer", display: "flex", alignItems: "center", gap: "6px", transition: "all 0.2s" }}>
                 <Icon size={14} /> {cat.label}
               </button>
             );

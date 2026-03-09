@@ -69,9 +69,8 @@ export const ROLE_COLORS = {
   cliente: C.teal,
 };
 
-// ─── SOMBRAS NEÓN (helpers) ───────────────────────────────────────
-export const glow = (color, intensity = "55") =>
-  `0 0 12px ${color}${intensity}`;
+// ─── SOMBRAS (helpers) ───────────────────────────────────────
+// Se eliminaron todas las sombras fosforescentes/neón a petición del usuario.
+export const glow = (color, intensity = "22") => "none";
 
-export const glowLg = (color, intensity = "44") =>
-  `0 0 28px ${color}${intensity}`;
+export const glowLg = (color, intensity = "15") => "none";

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { login as loginService } from '../services/authService';
+import { useAuth } from '../context/AuthContext';
 import { C, FONT, ROLE_COLORS, glow } from '../styles/designTokens';
 import { Mail, Lock, LogIn, AlertCircle, Eye, EyeOff, Utensils } from 'lucide-react';
 
@@ -26,7 +27,7 @@ function PapelPicado() {
 
 /* ─── DEMO ROLES ─────────────────────────────────────────────── */
 const DEMO_ROLES = [
-  { label: "Admin",  email: "admin@itaquito.com",  password: "admin123",  color: ROLE_COLORS.admin  },
+  { label: "Admin",  email: "admin@itaquito.com",  password: "Admin123!",  color: ROLE_COLORS.admin  },
   { label: "Mesero", email: "mesero@itaquito.com", password: "mesero123", color: ROLE_COLORS.mesero },
   { label: "Caja",   email: "caja@itaquito.com",   password: "caja123",   color: ROLE_COLORS.caja   },
   { label: "Cliente",email: "cliente@itaquito.com",password: "cliente123",color: ROLE_COLORS.cliente },
@@ -35,7 +36,7 @@ const DEMO_ROLES = [
 /* ─── INPUT COMPONENT ────────────────────────────────────────── */
 function InputField({ id, type, label, value, onChange, Icon, extra }) {
   const [focused, setFocused] = useState(false);
-  const filled = value.length > 0;
+  const filled = value?.length > 0;
 
   return (
     <div style={{ position: "relative", marginBottom: "16px" }}>
@@ -112,22 +113,27 @@ const Login = () => {
   const [loading,  setLoading]  = useState(false);
 
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { loginUser } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
     try {
-      await login(email, password);
-      navigate('/dashboard');
+      const res = await loginService(email, password);
+      loginUser(res.data.user, res.data.token);
+
+      if (res.data.user.rol === 'admin') {
+        navigate('/admin/productos');
+      } else {
+        navigate('/');
+      }
     } catch (err) {
       setError(err.response?.data?.message || 'Correo o contraseña incorrectos');
     } finally {
       setLoading(false);
     }
   };
-
   const fillCredentials = (e, p) => {
     setEmail(e);
     setPassword(p);
