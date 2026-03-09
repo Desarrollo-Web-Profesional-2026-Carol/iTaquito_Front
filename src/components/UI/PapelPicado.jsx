@@ -1,11 +1,6 @@
 import { PICADO } from '../../styles/designTokens';
 
-/*
-  Props:
-  - flip  : boolean — voltea verticalmente (para parte inferior de sección)
-  - count : number  — cantidad de triángulos (default 16)
-  - height: number  — altura en px (default 44)
-*/
+
 const PapelPicado = ({ flip = false, count = 16, height = 44 }) => {
   const w = 100 / count;
 

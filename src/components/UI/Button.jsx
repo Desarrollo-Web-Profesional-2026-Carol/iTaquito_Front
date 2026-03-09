@@ -1,19 +1,6 @@
 import { useState } from 'react';
 import { C, FONT, glow } from '../../styles/designTokens';
 
-/*
-  Variantes:
-  - primary   → rosa, CTA principal
-  - secondary → borde sutil, acción secundaria
-  - danger    → rosa como error/eliminar
-  - ghost     → transparente con borde tenue
-  - success   → teal, confirmación
-  - warning   → amarillo, precaución
-
-  Props extras:
-  - size: 'sm' | 'md' (default) | 'lg'
-  - iconOnly: true → cuadrado con solo icono
-*/
 
 const VARIANTS = {
   primary: {

@@ -1,28 +1,27 @@
-// ─── DESIGN TOKENS — iTaquito (Tema Oscuro / Cantina) ────────────
 
 export const C = {
-  // ── Colores de acento (vibrantes) ──────────────────────────────
-  pink:          "#E83E8C",   // Rosa Mexicano — Admin
+  // ── Colores de acento  ──────────────────────────────
+  pink:          "#E83E8C",   // Rosa Mexicano 
   pinkDim:       "#C0306E",
   pinkLight:     "#F06DAA",
 
-  orange:        "#F9690E",   // Naranja Intenso — Mesero
+  orange:        "#F9690E",   // Naranja Intenso 
   orangeDim:     "#C9520A",
   orangeLight:   "#FAA55A",
 
-  yellow:        "#F4D03F",   // Amarillo Eléctrico — Caja / CTAs
+  yellow:        "#F4D03F",   // Amarillo Eléctrico —
   yellowDim:     "#C4A810",
 
-  teal:          "#1ABC9C",   // Turquesa — Cliente / Éxito
+  teal:          "#1ABC9C",   // Turquesa 
   tealDim:       "#148F77",
   tealLight:     "#48C9B0",
 
-  purple:        "#9B59B6",   // Morado Vibrante — Acento secundario
+  purple:        "#9B59B6",   // Morado Vibrante 
   purpleDim:     "#7D3C98",
   purpleLight:   "#B07CC6",
 
   // ── Fondos oscuros (jerarquía de profundidad) ──────────────────
-  bg:            "#0F0D0B",   // Fondo principal — más oscuro
+  bg:            "#0F0D0B",   // Fondo principal 
   bgCard:        "#1A1612",   // Cards y paneles
   bgCardHov:     "#221E18",   // Card en hover
   bgAccent:      "#251F18",   // Header, footer, barras
@@ -39,9 +38,9 @@ export const C = {
 
   // ── Utilidades ────────────────────────────────────────────────
   white:         "#FFFFFF",
-  success:       "#1ABC9C",   // Verde éxito (mismo que teal)
-  error:         "#E83E8C",   // Error (mismo que pink)
-  warning:       "#F4D03F",   // Advertencia (mismo que yellow)
+  success:       "#1ABC9C",   // Verde 
+  error:         "#E83E8C",   // Error 
+  warning:       "#F4D03F",   // Advertencia 
 };
 
 // ─── FUENTE ───────────────────────────────────────────────────────

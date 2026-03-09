@@ -297,7 +297,7 @@ const Header = () => {
               borderRadius: "8px",
               padding: "6px",
               cursor: "pointer",
-              display: "none", // se muestra via CSS media query
+              display: "none",
               alignItems: "center",
               justifyContent: "center",
               color: C.textPrimary,
