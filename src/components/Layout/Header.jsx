@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import { C, FONT } from '../../styles/designTokens';
 import {
   LogOut, Menu, X,
   LayoutDashboard, UtensilsCrossed, Users, BarChart3,
   TableProperties, ClipboardList, Music,
   Home, ShoppingBag, Receipt, Banknote, History,
-  ChevronDown
+ChevronDown, ChefHat
 } from 'lucide-react';
 
 /* ─── NAV CONFIG POR ROL ─────────────────────────────────────── */
@@ -18,6 +18,7 @@ const NAV_CONFIG = {
     links: [
       { label: "Dashboard",  path: "/dashboard", Icon: LayoutDashboard },
       { label: "Mesas",      path: "/tables",    Icon: TableProperties  },
+      { label: "Cocineros",  path: "/cooks",     Icon: ChefHat          },
       { label: "Menú",       path: "/menu",      Icon: UtensilsCrossed  },
       { label: "Usuarios",   path: "/users",     Icon: Users            },
       { label: "Reportes",   path: "/reports",   Icon: BarChart3        },

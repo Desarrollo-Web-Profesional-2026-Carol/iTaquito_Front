@@ -17,15 +17,21 @@ export function AuthProvider({ children }) {
     localStorage.setItem('token', tokenValue);
   };
 
-  const logoutUser = () => {
+  // Le cambié el nombre de logoutUser a logout para que no truene tu Header.jsx
+  const logout = () => {
     setUser(null);
     setToken(null);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
   };
 
+  // Creamos la variable isAdmin evaluando el rol del usuario logueado.
+  // OJO: Asegúrate de que en tu base de datos el rol se llame exactamente 'admin'.
+  const isAdmin = user?.rol === 'admin'; 
+
   return (
-    <AuthContext.Provider value={{ user, token, loginUser, logoutUser }}>
+    // Agregamos isAdmin y el nuevo nombre de logout al provider
+    <AuthContext.Provider value={{ user, token, loginUser, logout, isAdmin }}>
       {children}
     </AuthContext.Provider>
   );
