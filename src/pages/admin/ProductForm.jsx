@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getProductById, createProduct, updateProduct } from '../../services/productsService';
 import { getCategories } from '../../services/categoriesService';
 import { C, FONT, PICADO, glow } from '../../styles/designTokens';
-import { ChevronLeft, PackagePlus, Edit3, Image as ImageIcon, CheckCircle, AlertCircle, Type, AlignLeft, DollarSign, Tag, UploadCloud } from 'lucide-react';
+import { ChevronLeft, PackagePlus, Edit3, Image as CheckCircle, AlertCircle, Type, AlignLeft, DollarSign, Tag, UploadCloud } from 'lucide-react';
 
 /* ─── PAPEL PICADO ───────────────────────────────────────────── */
 function PapelPicado() {

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import {
   Utensils, Star, Clock, TrendingUp,
-  ChevronRight, Flame, Award,
-  Zap, ArrowRight, Heart, ThumbsUp, MessageCircle
+   Flame, Award,
+  Zap, ArrowRight, ThumbsUp, MessageCircle
 } from "lucide-react";
 
 import { C, FONT, PICADO } from '../styles/designTokens';
